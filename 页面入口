@@ -1,93 +1,13 @@
-// 跳转页面入口函数
-@Builder
-export function LayoutBuilder() {
-  Layout();
-}
-
+@Entry
 @Component
-struct Layout {
-  pathStack: NavPathStack = new NavPathStack();
+struct Index {
+  pathStack : NavPathStack = new NavPathStack();
 
   build() {
-    NavDestination() {
-Column(){
-  Row()
-  {
-Image($r("app.media.Expand_left"))
-  .width("8%")
-  .padding({top:50})
-    Text("Cards & Offers")
-      .fontSize(20)
-      .fontWeight(FontWeight.Bold)
-      .padding({top:50})
-      .textAlign(TextAlign.Center)
-      .layoutWeight(1)
-      Image($r("app.media.more"))
-        .width("12%")
-        .padding({ top:50,right: 20 })
-  }
-  .backgroundColor("F5F5F5")
-  .width("100%")
-  .height("15%")
-  Row() {
-    Image($r("app.media.bank"))
-      .width(40)
-      .padding({ top: 20, left: 10, bottom: 20 })
-      .margin({ right: 10 })
-    Text("Membership Cards")
-      .fontWeight(FontWeight.Bold)
-      .fontSize(20)
-      .layoutWeight(1)
-    Image($r("app.media.right"))
-      .width(45)
-      .padding({ right: 10 })
-  }
-  .width("100%")
-  .height("10%")
-  .backgroundColor("F8F8F8")
-  Row() {
-
-  }
-  .width("100%")
-  .height("1%")
-  .backgroundColor(Color.Gray)
-  Row() {
-    Image($r("app.media.title"))
-      .width(40)
-      .padding({ top: 20, left: 10, bottom: 20 })
-      .margin({ right: 10 })
-    Text("Offers & Gift Cards")
-      .fontWeight(FontWeight.Bold)
-      .fontSize(20)
-      .layoutWeight(1)
-    Image($r("app.media.right"))
-      .width(45)
-      .padding({ right: 10 })
-  }
-  .width("100%")
-  .height("10%")
-  .backgroundColor("F8F8F8")
-  Row() {
-    Image($r("app.media.red"))
-      .width(40)
-      .padding({ top: 20, left: 10, bottom: 20 })
-      .margin({ right: 10 })
-    Text("Tickets & Licenses")
-      .fontWeight(FontWeight.Bold)
-      .fontSize(20)
-      .layoutWeight(1)
-    Image($r("app.media.right"))
-      .width(45)
-      .padding({ right: 10 })
-  }
-  .width("100%")
-  .height("10%")
-  .backgroundColor("F8F8F8")
-}
-    }
-    .hideTitleBar(true) // 隐藏系统标题栏
-    .onReady((context: NavDestinationContext) => {
-      this.pathStack = context.pathStack;
+    Navigation(this.pathStack){
+    }.onAppear(() => {
+      this.pathStack.pushPathByName("Start", null, false);
     })
+    .hideNavBar(true)
   }
 }

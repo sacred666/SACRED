@@ -1,0 +1,237 @@
+// 跳转页面入口函数
+@Builder
+export function StartBuilder() {
+  Start();
+}
+
+@Component
+struct Start {
+  pathStack: NavPathStack = new NavPathStack();
+
+  build() {
+    NavDestination() {
+      Column() {
+        Row() {
+
+          Image($r("app.media.avatar1"))
+            .width("25%")
+            .border({ radius: 12 })
+
+
+            .padding({ left: 1, bottom: 70 })
+            .margin({ right: 20 })
+          Column() {
+            Text("Taoxiyang")
+              .width("100%")
+              .margin({ bottom: 33 })
+              .fontSize(18)
+              .fontWeight(FontWeight.Bold)
+            Text("Weixin ID:xiyang")
+              .width("100%")
+              .fontWeight(406)
+              .margin({ bottom: 25 })
+            Row() {
+              Text("+Status")
+                .fontColor("#888888")
+                .fontWeight(400)  // 常规字重（等同于 Normal）
+                .border({ width: 1, color: "#E0E0E0", radius: 12 })
+                .padding({
+                  right: 5,
+                  left: 5,
+                  top: 1,
+                  bottom: 1
+                })
+                .margin({ right: 15 })
+              Row() {
+                Image($r("app.media.avatar2"))
+                  .width(10)
+                Text("1friends")
+                  .fontColor("#888888")
+                  .fontWeight(400)
+
+              }
+              .padding({
+                right: 5,
+                left: 5,
+                top: 1,
+                bottom: 1
+              })
+              .border({ width: 1, color: "#E0E0E0", radius: 12 })
+            }
+            .margin({ right: 10 })
+            .width("100%")
+            .padding({ bottom: 10 })
+          }
+          .margin({ right: 23 })
+          .layoutWeight(1)
+
+          Row() {
+            Image($r("app.media.erweima"))
+              .width(35)
+              .height(35)
+              .objectFit(ImageFit.Contain)
+              .margin({ right: 3 })
+            Image($r("app.media.right"))
+              .width(35)
+          }
+
+        }
+        .width("100%")
+        .height("25%")
+        .padding({ left: 30 })
+        .backgroundColor(Color.White)
+
+        Row() {
+
+        }
+        .width("100%")
+        .height("2.5%")
+        .backgroundColor("#F5F5F5")
+
+        Row() {
+          Image($r("app.media.finish"))
+            .width(40)
+            .padding({ top: 20, left: 10, bottom: 20 })
+            .margin({ right: 10 })
+          Text("Pay and Services")
+
+            .fontSize(20)
+            .fontWeight(FontWeight.Bold)
+            .layoutWeight(1)
+          Image($r("app.media.right"))
+            .width(45)
+            .padding({ right: 10 })
+        }
+        .width("100%")
+        .height("10%")
+        .backgroundColor(Color.White)
+
+        Row() {
+
+        }
+        .width("100%")
+        .height("1%")
+        .backgroundColor("F5F5F5")
+
+        Row() {
+          Image($r("app.media.shoucang"))
+            .width(40)
+            .padding({ top: 20, left: 10, bottom: 20 })
+            .margin({ right: 10 })
+          Text("Favorites")
+            .fontWeight(FontWeight.Bold)
+            .fontSize(20)
+            .layoutWeight(1)
+          Image($r("app.media.right"))
+            .width(45)
+            .padding({ right: 10 })
+        }
+        .width("100%")
+        .height("10%")
+        .backgroundColor(Color.White)
+
+        Row() {
+          Image($r("app.media.photo"))
+            .width(40)
+            .padding({ top: 20, left: 10, bottom: 20 })
+            .margin({ right: 10 })
+          Text("My Posts")
+            .fontWeight(FontWeight.Bold)
+            .fontSize(20)
+            .layoutWeight(1)
+          Image($r("app.media.right"))
+            .width(45)
+            .padding({ right: 10 })
+        }
+        .width("100%")
+        .height("10%")
+        .backgroundColor(Color.White)
+
+        Row() {
+          Image($r("app.media.play"))
+            .width(40)
+            .padding({ top: 20, left: 10, bottom: 20 })
+            .margin({ right: 10 })
+          Text("Channels")
+            .fontWeight(FontWeight.Bold)
+            .fontSize(20)
+            .layoutWeight(1)
+          Image($r("app.media.right"))
+            .width(45)
+            .padding({ right: 10 })
+        }
+        .width("100%")
+        .height("10%")
+        .backgroundColor(Color.White)
+
+        Row() {
+          Image($r("app.media.ticket"))
+            .width(40)
+            .padding({ top: 20, left: 10, bottom: 20 })
+            .margin({ right: 10 })
+          Text("Cards & Offers")
+            .fontWeight(FontWeight.Bold)
+            .fontSize(20)
+            .layoutWeight(1)
+          Image($r("app.media.right"))
+            .width(45)
+            .padding({ right: 10 })
+        }
+        .onClick(()=>{this.pathStack.pushPathByName("Layout", null, false);})
+        .width("100%")
+        .height("10%")
+        .backgroundColor(Color.White)
+
+        Row() {
+          Image($r("app.media.emoji"))
+            .width(40)
+            .padding({ top: 20, left: 10, bottom: 20 })
+            .margin({ right: 10 })
+          Text("Sticker Gallery")
+            .fontWeight(FontWeight.Bold)
+            .fontSize(20)
+            .layoutWeight(1)
+          Image($r("app.media.right"))
+            .width(45)
+            .padding({ right: 10 })
+        }
+        .width("100%")
+        .height("10%")
+        .backgroundColor(Color.White)
+
+        Row() {
+
+        }
+        .width("100%")
+        .height("1%")
+        .backgroundColor("#F5F5F5")
+
+        Row() {
+          Image($r("app.media.settings"))
+            .width(40)
+            .padding({ top: 20, left: 10, bottom: 20 })
+            .margin({ right: 10 })
+          Text("Settings")
+            .fontWeight(FontWeight.Bold)
+            .fontSize(20)
+            .layoutWeight(1)
+          Image($r("app.media.right"))
+            .width(45)
+            .padding({ right: 10 })
+        }
+        .width("100%")
+        .height("10%")
+        .backgroundColor(Color.White)
+      }
+      .width("100%")
+      .height("100%")
+      .backgroundColor("#F5F5F5")
+      .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
+      .padding({ left: 10, right: 10 })
+    }
+
+    .onReady((context: NavDestinationContext) => {
+      this.pathStack = context.pathStack;
+    })
+  }
+}
